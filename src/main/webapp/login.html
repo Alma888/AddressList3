@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <style>
+        body{
+            background:url(img/1.jpg) center;
+        }
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .rg_layout{
+            width: 500px;
+            height: 300px;
+            border: 5px gray solid;
+            background-color: white;
+            /*
+             * 让div水平居中
+             */
+            margin: auto;
+            margin-top: 30px;
+            background: url(img/1.jpg) center;
+        }
+
+        .rg_left{
+            /*border: 1px solid red;*/
+            float: left;
+            margin: 15PX;
+        }
+
+        .rg_left>p:first-child{
+            color: #FFd026;
+            font-size: 20PX;
+        }
+        .rg_left>p:last-child{
+            color: #FFd026;
+            font-size: 20PX;
+        }
+
+        .rg_center{
+            /*border: 1px solid red;*/
+            float: left;
+            width: 450px;
+        }
+
+
+        .rg_right>p:first-child{
+            font-size: 15PX;
+        }
+
+        .rg_right p a{
+            color: pink;
+        }
+
+        .te_left{
+            width: 100px;
+            text-align: right;
+            height: 45px;
+            color: aqua;
+        }
+
+        .te_right{
+            padding-left: 50px;
+        }
+
+        #login{
+            width:150px ;
+            height: 40px;
+            background-color:yellow ;
+        }
+
+        #username,#password{
+            width: 251px;
+            height: 32px;
+            border: 1px solid gray;
+            /*
+             * 设置边框圆角
+             */
+            border-radius:5px;
+            padding-left: 15px;/*让里面的字离的远一点*/
+        }
+
+        #ii{
+            position: absolute;
+            margin-left: 200px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var s = document.getElementById("xx");
+            if (s!=null){//说明登陆失败
+              alert("登录失败！请输入正确的用户名和密码！")
+            }
+        });
+
+    </script>
+</head>
+<body>
+<div class="rg_layout">
+    <div class="rg_left">
+        <p>用户登录</p>
+        <p>USER LOGIN</p>
+    </div>
+
+    <div class="rg_center">
+        <div class="rg_form">
+            <form action="/login.servlet" method="post">
+                <table>
+                    <tr>
+                        <td class="te_left"><label for="username">姓名</label></td>
+                        <td class="te_right"><input type="text" name="adminname" id="username" placeholder="请输入姓名"/></td>
+                    </tr>
+
+                    <tr>
+                        <td class="te_left"><label for="password">密码</label></td>
+                        <td class="te_right"><input type="password" name="adminpassword" id="password" placeholder="请输入密码"/></td>
+                    </tr>
+                    <tr>
+                        <input type="hidden" name="type" value="login"/>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><div id="ii"><input type="submit" id="login"  value="登录"/></div></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>功能页面</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        function addSomePerson() {
+            location.href = "add.html";
+        }
+    </script>
+</head>
+<body>
+    <form action="login.servlet">
+        <input type="hidden" name="type" value="searchallperson"/>
+        <button>查找全部</button>
+    </form>
+    <br/>
+    <hr size="20px" color="red"/>
+    <br/>
+    <button onclick="addSomePerson()">添加用户</button>
+
+</body>
+</html>
